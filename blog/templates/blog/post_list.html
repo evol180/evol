@@ -8,15 +8,25 @@
     <div>
         <h1><a href="">Django Blog</a></h1>
     </div>
+    <!--<div>-->
+        <!---->
+        <!--<p>published: 11.07.2017, 12:14</p>-->
+        <!--<h2><a href="">My first post</a></h2>-->
+        <!--<p>fjdsklfjdskl</p>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<p>published: 11.07.2017, 15:14</p>-->
+        <!--<h2><a href="">My second post</a></h2>-->
+        <!--<p>kkkkkkkkkkkkkkkkk</p>-->
+    <!--</div>-->
     <div>
-        <p>published: 11.07.2017, 12:14</p>
-        <h2><a href="">My first post</a></h2>
-        <p>fjdsklfjdskl</p>
-    </div>
-    <div>
-        <p>published: 11.07.2017, 15:14</p>
-        <h2><a href="">My second post</a></h2>
-        <p>kkkkkkkkkkkkkkkkk</p>
+        {% for post in posts %}
+            <div>
+                <p>published: {{post.published_date}}</p>
+                <h1><a href="">{{post.title}}</a></h1>
+                <p>{{post.text|linebreaksbr}}</p>
+            </div>
+        {% endfor %}
     </div>
     <p>Hi there!</p>
     <p>It works!</p>
